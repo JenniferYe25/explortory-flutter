@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widgets/text_title_widget.dart';
 import './text_scaling.dart';
 import '../constants/color_constants.dart';
 
@@ -17,9 +18,9 @@ class AppbarWidget extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              title,
-              style: const TextStyle(color: kBlack, fontSize: 24),
+            TextTitleWidget(
+              text: title,
+              isHeading: true,
             ),
             IconButton(
               icon: const Icon(Icons.person_add_alt_1),
