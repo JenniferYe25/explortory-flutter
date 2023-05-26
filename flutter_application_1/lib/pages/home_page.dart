@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/books_page.dart';
+import 'package:flutter_application_1/pages/friends_page.dart';
 import 'package:flutter_application_1/widgets/appbar_widget.dart';
 import 'package:flutter_application_1/widgets/text_title_widget.dart';
 import 'package:flutter_application_1/widgets/friend_card_widget.dart';
@@ -15,6 +17,7 @@ class HomePage extends StatelessWidget {
         preferredSize: Size.fromHeight(50),
         child: AppbarWidget(
           title: 'Home',
+          friends: false,
         ),
       ),
       body: SingleChildScrollView(
@@ -37,7 +40,12 @@ class HomePage extends StatelessWidget {
                   const TextTitleWidget(
                       text: "New with Friends", isHeading: true),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const FriendsPage()));
+                      },
                       child: const Text('See More',
                           style: TextStyle(fontSize: 16)))
                 ],
@@ -54,7 +62,7 @@ class HomePage extends StatelessWidget {
                     FriendCardWidget(
                       icon: Icons.celebration_outlined,
                       message:
-                          'Jennifer just finished setting up their IQ Wifi!',
+                          'Jennifer just finished setting up their IQ Wifi router!',
                       name: 'Jennifer Ye',
                     ),
                     FriendCardWidget(
@@ -118,7 +126,12 @@ class HomePage extends StatelessWidget {
                   const TextTitleWidget(
                       text: "New on Shelves", isHeading: true),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const BooksPage()));
+                      },
                       child: const Text('See More',
                           style: TextStyle(fontSize: 16)))
                 ],
@@ -133,16 +146,19 @@ class HomePage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: const [
                     BookCardWidget(
+                      ishome: true,
                       title: 'To Kill a Mockingbird',
                       cover:
                           'https://th.bing.com/th/id/OIP.NGofr7d8y6lcAUn2SeXXPgAAAA?pid=ImgDet&rs=1',
                     ),
                     BookCardWidget(
+                      ishome: true,
                       title: 'It',
                       cover:
                           'https://th.bing.com/th/id/R.e79858a15936edf4157f53dec1a63caa?rik=aRWfADCG6vg%2bWg&pid=ImgRaw&r=0',
                     ),
                     BookCardWidget(
+                      ishome: true,
                       title: 'Classroom of the Elite',
                       cover:
                           'https://th.bing.com/th/id/OIP.P1DMQYRveoywVb6Gjc-vEwHaKj?pid=ImgDet&rs=1',

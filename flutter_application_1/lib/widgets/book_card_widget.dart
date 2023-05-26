@@ -4,8 +4,13 @@ import 'package:flutter_application_1/constants/color_constants.dart';
 class BookCardWidget extends StatelessWidget {
   final String title;
   final String cover;
+  final bool ishome;
 
-  const BookCardWidget({super.key, required this.title, required this.cover});
+  const BookCardWidget(
+      {super.key,
+      required this.title,
+      required this.cover,
+      required this.ishome});
 
   @override
   Widget build(BuildContext context) {
