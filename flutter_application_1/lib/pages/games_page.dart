@@ -11,10 +11,7 @@ class GamePage extends StatelessWidget {
     return Scaffold(
         appBar: const PreferredSize(
           preferredSize: Size.fromHeight(50),
-          child: AppbarWidget(
-            title: 'Games',
-            friends: false,
-          ),
+          child: AppbarWidget(title: 'Games'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),

@@ -17,10 +17,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         appBar: const PreferredSize(
           preferredSize: Size.fromHeight(50),
-          child: AppbarWidget(
-            title: 'Home',
-            friends: false,
-          ),
+          child: AppbarWidget(title: 'Home'),
         ),
         body: SingleChildScrollView(
           child: Column(

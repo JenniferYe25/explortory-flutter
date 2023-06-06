@@ -11,10 +11,7 @@ class BooksPage extends StatelessWidget {
     return Scaffold(
         appBar: const PreferredSize(
           preferredSize: Size.fromHeight(50),
-          child: AppbarWidget(
-            title: 'Books',
-            friends: false,
-          ),
+          child: AppbarWidget(title: 'Books'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),

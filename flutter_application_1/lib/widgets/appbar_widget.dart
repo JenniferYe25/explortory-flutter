@@ -5,9 +5,12 @@ import '../constants/color_constants.dart';
 
 class AppbarWidget extends StatelessWidget {
   final String title;
-  final bool friends;
+  final IconData? icon;
+  final Widget? page;
+  final bool? statefull;
 
-  const AppbarWidget({super.key, required this.title, required this.friends});
+  const AppbarWidget(
+      {super.key, required this.title, this.icon, this.page, this.statefull});
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +20,14 @@ class AppbarWidget extends StatelessWidget {
         isHeading: true,
       ),
     ];
-    if (friends) {
+    if (icon != null) {
       appbar.add(IconButton(
-        icon: const Icon(Icons.person_add_alt_1),
+        icon: Icon(icon),
         iconSize: 32,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => page!));
+        },
       ));
     }
     return TextScaling(
