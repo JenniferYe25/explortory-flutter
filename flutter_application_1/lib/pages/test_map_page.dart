@@ -33,13 +33,56 @@ Map<String, RouterData> data = {
       name: 'Living Room',
       connectedAgents: 0,
       isWireless: false,
-      isOnline: true)
+      isOnline: true),
+  'Hall': RouterData(
+    name: 'Hall',
+    connectedAgents: 0,
+    isWireless: true,
+    isOnline: true,
+  ),
+  'Garage': RouterData(
+    name: 'Garage',
+    connectedAgents: 0,
+    isWireless: true,
+    isOnline: true,
+  ),
+  'Bedroom': RouterData(
+    name: 'Bedroom',
+    connectedAgents: 2,
+    isWireless: true,
+    isOnline: true,
+  ),
+  'A1': RouterData(
+    name: 'Agent 1',
+    connectedAgents: 0,
+    isWireless: true,
+    isOnline: true,
+  ),
+  'A2': RouterData(
+    name: 'Agent 2',
+    connectedAgents: 0,
+    isWireless: true,
+    isOnline: true,
+  )
 };
 
 List<NodeInput> network = [
   NodeInput(id: 'Internet', next: [EdgeInput(outcome: 'Negotation')]),
-  NodeInput(id: 'Negotation', next: [EdgeInput(outcome: 'Living')]),
-  NodeInput(id: 'Living', next: [])
+  NodeInput(id: 'Negotation', next: [
+    EdgeInput(outcome: 'Living'),
+    EdgeInput(outcome: 'Hall'),
+    EdgeInput(outcome: 'Garage'),
+    EdgeInput(outcome: 'Bedroom'),
+  ]),
+  NodeInput(id: 'Living', next: []),
+  NodeInput(id: 'Hall', next: []),
+  NodeInput(id: 'Garage', next: []),
+  NodeInput(id: 'Bedroom', next: [
+    EdgeInput(outcome: 'A1'),
+    EdgeInput(outcome: 'A2'),
+  ]),
+  NodeInput(id: 'A1', next: []),
+  NodeInput(id: 'A2', next: [])
 ];
 
 class CurrentNodeInfo {
