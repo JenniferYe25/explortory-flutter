@@ -63,6 +63,12 @@ Map<String, RouterData> data = {
     connectedAgents: 0,
     isWireless: true,
     isOnline: true,
+  ),
+  'A3': RouterData(
+    name: 'Agent 3',
+    connectedAgents: 0,
+    isWireless: true,
+    isOnline: true,
   )
 };
 
@@ -80,9 +86,11 @@ List<NodeInput> network = [
   NodeInput(id: 'Bedroom', next: [
     EdgeInput(outcome: 'A1'),
     EdgeInput(outcome: 'A2'),
+    EdgeInput(outcome: 'A3')
   ]),
   NodeInput(id: 'A1', next: []),
-  NodeInput(id: 'A2', next: [])
+  NodeInput(id: 'A2', next: []),
+  NodeInput(id: 'A3', next: [])
 ];
 
 class CurrentNodeInfo {
