@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
+import 'package:flutter_application_1/pages/test_map_page.dart';
 import 'package:flutter_application_1/utils/user_data.dart';
 
 Future main() async {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       ),
     );
     return const MaterialApp(
-      home: LoginPage(),
+      home: TestMapPage(),
       debugShowCheckedModeBanner: false,
     );
   }
